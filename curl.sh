@@ -1,0 +1,1 @@
+curl -v "default-broker.quarkus-funqy-service.svc.cluster.local" -X POST -H "Ce-Id: 536808d3-88be-4077-9d7a-a3f162705f79" -H "Ce-specversion: 0.3" -H "Ce-Type: dev.nodeshift.samples.quarkus-funqy" -H "Ce-Source: dev.nodeshift.samples/quarkus-funqy-source" -H "Content-Type: application/json" -d '{"name": "Bill"}'

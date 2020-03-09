@@ -1,0 +1,16 @@
+apiVersion: eventing.knative.dev/v1alpha1
+kind: Trigger
+metadata:
+  name: quarkus-funqy-service
+  namespace: quarkus-funqy-service
+spec:
+  broker: default
+  filter:
+    attributes:
+      type: dev.nodeshift.samples.quarkus-funqy
+      source: dev.nodeshift.samples/quarkus-funqy-source
+  subscriber:
+    ref:
+      apiVersion: v1
+      kind: Service
+      name: quarkus-funqy-service

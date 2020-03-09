@@ -1,0 +1,13 @@
+apiVersion: serving.knative.dev/v1
+kind: Service
+apiVersion: v1
+metadata:
+  name: quarkus-funqy-service
+  namespace: quarkus-funqy-service
+spec:
+  selector:
+    app: quarkus-funqy-service
+  ports:
+   - protocol: TCP
+     port: 80
+     targetPort: 8080

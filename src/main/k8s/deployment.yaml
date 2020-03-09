@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: quarkus-funqy-service
+  namespace: quarkus-funqy-service
+spec:
+  replicas: 1
+  selector:
+    matchLabels: &labels
+      app: quarkus-funqy-service
+  template:
+    metadata:
+      labels: *labels
+    spec:
+      containers:
+        - name: quarkus-funqy-service
+          image: docker.io/patriot1burke/faas-quarkus-funqy:latest
+          imagePullPolicy: Always
+      imagePullSecrets:
+        - name: registry-secret
